@@ -432,6 +432,7 @@ nav:
         - Tutorials: tools/dApp-development/third-party-tutorials.md
         - Data:
           - Alchemy subgraphs: https://docs.alchemy.com/docs/how-to-build-and-deploy-a-subgraph-on-polygon-zkevm-using-alchemy-subgraphs
+          - Codex: tools/data/codex.md
           - The Graph: tools/data/thegraph.md
         - Storage:
           - IPFS: tools/storage/ipfs.md
