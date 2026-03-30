@@ -16,6 +16,52 @@ Before you begin, ensure you have:
 
 * [Node.js](https://nodejs.org/en) and npm
 
+## Option A: Rides SDK (Recommended)
+
+The [Rides SDK](https://docs.faremeter.xyz/client/rides-sdk) from [Faremeter](https://faremeter.xyz) is the fastest way to get started. It's a drop-in replacement for `fetch` that handles x402 payment flows automatically with zero configuration.
+
+## 1. Install
+
+```bash
+npm install @faremeter/rides
+```
+
+## 2. Make Paid Requests
+
+```typescript
+import { payer } from "@faremeter/rides"
+
+// Add your EVM private key (auto-detects wallet type)
+await payer.addLocalWallet(process.env.EVM_PRIVATE_KEY)
+
+// Use payer.fetch exactly like the global fetch — payments are handled automatically
+const response = await payer.fetch("https://api.example.com/paid-endpoint")
+const data = await response.json()
+console.log(data)
+```
+
+Rides supports multiple chains out of the box. If the server requires payment on Polygon, Rides will use the correct wallet and handle the full x402 flow for you.
+
+For more control over networks and assets, use `createPayer`:
+
+```typescript
+import { createPayer } from "@faremeter/rides"
+
+const customPayer = createPayer({
+  networks: ["polygon"],
+  assets: ["USDC"],
+})
+
+await customPayer.addLocalWallet(process.env.EVM_PRIVATE_KEY)
+const response = await customPayer.fetch("https://api.example.com/paid-endpoint")
+```
+
+See the [Rides SDK documentation](https://docs.faremeter.xyz/client/rides-sdk) for the full API reference.
+
+---
+
+## Option B: x402-fetch / x402-axios
+
 ## 1. Install Dependencies
 
 **HTTP Clients**
@@ -27,7 +73,6 @@ npm install x402-axios
 # or
 npm install x402-fetch
 ```
-";
 
 ## 2. Create a Wallet Client
 
@@ -131,15 +176,18 @@ Clients will throw errors if:
 * There is an error creating the payment header
 
 ## Summary
-* Install an x402 client package
 
-* Create a wallet client
+* Install an x402 client package (`@faremeter/rides`, `x402-fetch`, or `x402-axios`)
 
-* Use the provided wrapper/interceptor to make paid API requests
+* Create or add a wallet
+
+* Use the provided wrapper to make paid API requests
 
 * Payment flows are handled automatically for you
 
 ## References:
+
+* [Rides SDK documentation](https://docs.faremeter.xyz/client/rides-sdk)
 
 * [x402-fetch npm docs](https://www.npmjs.com/package/x402-fetch)
 
