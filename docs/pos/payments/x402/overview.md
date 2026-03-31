@@ -22,7 +22,7 @@ Polygon currently supports x402 on Mainnet and Amoy through the following facili
 3. [ThirdWeb](https://playground.thirdweb.com/payments/x402)
 4. [x402.rs Facilitator Endpoint](https://facilitator.x402.rs/)
 5. [Pay.AI](https://payai.network/)
-6. [Corbits](https://docs.corbits.dev/about-x402/facilitators)
+6. [Faremeter](https://docs.faremeter.xyz/concepts/facilitators)
 7. [Questflow](https://facilitator.questflow.ai/)
 
 
