@@ -91,6 +91,7 @@ Public RPCs may have rate limits or traffic restrictions. For dedicated free RPC
 - [Chain49](https://chain49.com/)
 - [Chainbase](https://chainbase.com/)
 - [Stackup](https://www.stackup.sh/)
+- [Satelink](https://rpc.satelink.network/rpc/polygon)
 - [1RPC](https://1rpc.io/)
 - [4EVERLAND](https://docs.4everland.org/rpc-beta/polygon)
 - [SubQuery](https://subquery.network/rpc)
