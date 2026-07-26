@@ -98,3 +98,5 @@ Public RPCs may have rate limits or traffic restrictions. For dedicated free RPC
 - [dRPC](https://drpc.org/chainlist/polygon)
 
 For a complete list of public endpoints, visit [Alchemy's Chain Connect](https://www.alchemy.com/chain-connect/chain/polygon-pos) and [Chainlist](https://chainlist.org/?search=Polygon+Mainnet).
+
+For live latency and reliability measurements across public Polygon RPC endpoints, see the [OpenChainBench Polygon RPC benchmark](https://openchainbench.com/benchmarks/polygon-rpc), an independent open-source project probing endpoints every minute from three regions with methodology and Go harness published on GitHub under CC BY 4.0.
